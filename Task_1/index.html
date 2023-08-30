@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="./style.css">
-    <!-- <script defer src="../Task_2/app.js"></script> -->
+    <script defer src="../Task_2/app.js"></script>
     <!-- <script defer src="../Task_3/app.js"></script> -->
     <!-- <script defer src="../Task_4/app.js"></script> -->
     <!-- <script defer src="../Task_5/app.js"></script> -->
@@ -13,10 +13,66 @@
     <title>Dom Practical - Tasks 1 to 6</title>
   </head>
   <body>
+    <header>
+      <h1>Animal Filter</h1>
+      <p>Your favourite animal gallery!</p>
+    </header>
+    <section class="form">
+      <form id="filters">
+        <label for="search">Search Animal:</label>
+        <input type="text" id="search" name="search" placeholder="Enter animal description...">
+        <button type="submit" value="Submit">Search Animal</button>
+        <br><br>
+        <fieldset class="radioField" label="Animal">
+          <legend>Pick your favourite animal</legend>
+        <label class="inline" for="all">Show All</label>
+        <input class="animalRadio" type="radio" id="all" name="animalType" value="all" checked>
+        
+        <label class="inline" for="bear">Bear</label>
+        <input class="animalRadio" type="radio" id="bear" name="animalType" value="bear">
+        
+        <label class="inline" for="doplhine">Dolphine</label>
+        <input class="animalRadio" type="radio" id="doplhine" name="animalType" value="doplhin">
+        
+        <label class="inline" for="duck">Duck</label>
+        <input class="animalRadio" type="radio" id="duck" name="animalType" value="duck">
+        
+        <label class="inline" for="giraffe">Giraffe</label>
+        <input class="animalRadio" type="radio" id="giraffe" name="animalType" value="giraffes">
+        </fieldset>
+        
+    
+    </form>
+    <div class="summary"></div>
+    </section>
     <a href="https://codepen.io/andrushka/pen/rNdQmOd">Codepen Link to animal pictures</a><br />
     <a href="#">Completed tasks Codepen Link</a>
     <main class="container">
-      
+     <div class="results">
+    <!-- BEAR -->
+     <img class = "imageFilter" animal ="bear" loading="lazy" src="https://images.pexels.com/photos/158109/kodiak-brown-bear-adult-portrait-wildlife-158109.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown Bear on a Body of Water ">
+     <img class = "imageFilter" animal ="bear" loading="lazy" src="https://images.pexels.com/photos/35435/pexels-photo.jpg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown Bear">
+     <img class = "imageFilter" animal ="bear" loading="lazy" src="https://images.pexels.com/photos/1068554/pexels-photo-1068554.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Close-Up Photography of Grizzly Bear">
+     <img class = "imageFilter" animal ="bear" loading="lazy" src="https://images.pexels.com/photos/598966/pexels-photo-598966.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Grayscale Photo of a Polar Bear Cub ">
+
+     <!-- dolphin -->
+     <img class = "imageFilter" animal ="doplhin" loading="lazy" src="https://images.pexels.com/photos/1986374/pexels-photo-1986374.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Gray Dolphin on Body of Water">
+     <img class = "imageFilter" animal ="doplhin" loading="lazy" src="https://images.pexels.com/photos/225869/pexels-photo-225869.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Adorable Dolphins on Surface of Water">
+     <img class = "imageFilter" animal ="doplhin" loading="lazy" src="https://images.pexels.com/photos/162079/dolphin-sea-marine-mammals-wise-162079.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Dolphin's Head in the Surface">
+     <img class = "imageFilter" animal ="doplhin" loading="lazy" src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Dolphins Jumping Out from Ocean">
+
+     <!-- Duck -->
+     <img class = "imageFilter" animal ="duck" loading="lazy" src="https://images.pexels.com/photos/162140/duckling-birds-yellow-fluffy-162140.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Duckling on Black Soil during Daytime">
+<img class = "imageFilter" animal ="duck" loading="lazy" src="https://images.pexels.com/photos/660266/pexels-photo-660266.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Depth of Field Photography of Mallard Duck on Body of Water">
+<img class = "imageFilter" animal ="duck" loading="lazy" src="https://images.pexels.com/photos/209035/pexels-photo-209035.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown White and Blue Black Duck">
+<img class = "imageFilter" animal ="duck" loading="lazy" src="https://images.pexels.com/photos/833687/pexels-photo-833687.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Green and Gray Mallard Duck">
     </main>
+
+    <!-- Giraffes -->
+    <img class = "imageFilter" animal ="giraffes" loading="lazy" src="https://images.pexels.com/photos/1319515/pexels-photo-1319515.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Photograph of Giraffe">
+<img class = "imageFilter" animal ="giraffes" loading="lazy" src="https://images.pexels.com/photos/67552/giraffe-tall-mammal-africa-67552.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Brown Giraffe Walking on Brown Grass">
+<img class = "imageFilter" animal ="giraffes" loading="lazy" src="https://images.pexels.com/photos/1382156/pexels-photo-1382156.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Close-up Photography Of Giraffe">
+<img class = "imageFilter" animal ="giraffes" loading="lazy" src="https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg?auto=compress&amp;cs=tinysrgb&amp;h=350" alt="Three Giraffe Under Gray Sky">
+</div>   
   </body>
 </html>

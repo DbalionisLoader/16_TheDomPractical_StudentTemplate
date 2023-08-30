@@ -1,5 +1,35 @@
-h1{
+body {
+  margin-top: 10%;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+  padding: 8px 4px;
+}
+
+#search {
+  margin-right: 16px;
+}
+
+section.form{
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.radioField label{
+  padding-left: 24px;
+} 
+
+.inline:first-of-type{
+  padding-left: 2px;
+}
+
+h1,p{
   text-align: center;
+}
+
+p{
+  font-size: 18px;
 }
 
 .form-preamble {
@@ -9,6 +39,7 @@ h1{
 form {
   width: 55em;
   margin: 1em auto;
+  font-size: 16px;
 }
 
 fieldset {
@@ -16,7 +47,9 @@ fieldset {
 }
 
 button {
-  margin-left: 1em;
+padding: 8px;
+background-color: #15b12c;
+border: none;
 }
 
 small {
