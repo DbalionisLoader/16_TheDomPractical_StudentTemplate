@@ -1,20 +1,24 @@
 console.log("connected");
-//All radio button variable
+//List all radios
 const animalRadios = document.querySelectorAll('.animalRadio[type="radio"]');
-console.log(animalRadios);
+//Select only checked radio
+let selectedAnimal = document.querySelector('.animalRadio:checked');
 //Add images variable
 const animalImages = document.querySelectorAll('.imageFilter');
-console.log(animalImages);
 
+//Select search input - ignore the name
 const searchButton = document.getElementById("search");
 console.log(searchButton);
 
+//Form element to help with reseting form after refresh
 const form = document.getElementById('filters');
+
 
 
 
 filterAnimals = (e) => {
     
+   
     //Create a event object to allow us to use the .target function to fetch the value
     console.log(e.target.value);
     animalImages.forEach(imageItem =>{
@@ -25,20 +29,28 @@ filterAnimals = (e) => {
             imageItem.classList.add('hidden');
         } 
     })
+  
+    updateSummary(searchButton.value,e.target.value);
+}
 
+updateSummary = (searchvalue,radioValue) => {
+
+    const searchTitle = searchvalue ? 
+	`Showing animals that match the filter "${radioValue}" and the search "${searchvalue}".` : 
+	`Showing animals that match the filter "${radioValue}".`
+
+	document.getElementById('summary').innerHTML = searchTitle
 }
 
 searchAnimal = (e) => {
-
-    //Check for radio button
-    let selectedAnimal = document.querySelector('.animalRadio:checked');
-    console.log(selectedAnimal.value);
     
-   // const radioChecker = selectedAnimal.value === "all" ? true : false;
-/*     if ( selectedAnimal.value === imageItem.getAttribute("animal")) {
-        console.log(`The current radio value is: ${selectedAnimal.value}`);
-        } else { */
-    //Create a event object to allow us to use the .target function to fetch the value
+    e.preventDefault();
+
+    console.log(selectedAnimal.value);
+    console.log(searchButton.value);
+    
+    updateSummary(searchButton.value,selectedAnimal.value);
+
     animalImages.forEach(imageItem =>{
       const altText = imageItem.getAttribute('alt');
 
@@ -49,8 +61,6 @@ searchAnimal = (e) => {
         {
             imageItem.classList.remove('hidden');
         }
-
-
         else {
             imageItem.classList.add('hidden');
         } 
@@ -62,9 +72,8 @@ searchAnimal = (e) => {
 // if animal radio button is checked and has matching attribute, only apply search animal to the animal with the mathcing attribute
 // if 
 
-updateSummary = () => {
-    document.getElementById('summary').innerHTML = searchSummary;
-}
+
+
 
 animalRadios.forEach(radioItem => {
     radioItem.addEventListener('change', filterAnimals);
@@ -72,9 +81,6 @@ animalRadios.forEach(radioItem => {
 
 searchButton.addEventListener('keyup', searchAnimal);
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-})
 
 
 //Reset form on page refresh
@@ -82,3 +88,7 @@ window.addEventListener('load', function() {
     const form = document.getElementById('filters');
     form.reset(); // Reset the form elements to their default values
 });
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+  });
